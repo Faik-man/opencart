@@ -26,6 +26,9 @@ jobs:
           tools: composer:v2, cs2pr
           extensions: mbstring
 
+      - name: Install dependencies
+        run: composer install
+
       - name: Lint
         run: |
           error=0
