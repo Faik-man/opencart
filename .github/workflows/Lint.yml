@@ -59,6 +59,5 @@ jobs:
       - name: Code style
         if: matrix.php == '8.3'
         run: |
-          composer require --dev -w friendsofphp/php-cs-fixer v3.41.1
           ./upload/system/storage/vendor/bin/php-cs-fixer fix --dry-run --diff --ansi || true
           ./upload/system/storage/vendor/bin/php-cs-fixer fix --dry-run --format=checkstyle | cs2pr

@@ -16,7 +16,8 @@
     "cardinity/cardinity-sdk-php": ">=v3.3.6"
   },
   "require-dev": {
-    "phpstan/phpstan": "^2.1.17"
+    "phpstan/phpstan": "^2.1.17",
+    "friendsofphp/php-cs-fixer": "^3.95"
   },
   "autoload-dev": {
     "psr-4": {
