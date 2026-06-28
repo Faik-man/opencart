@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - 3.0.x.x
-  pull_request:
-    types: [opened, synchronize]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
