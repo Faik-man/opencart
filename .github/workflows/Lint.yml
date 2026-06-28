@@ -17,7 +17,7 @@ jobs:
         php: ['8.1', '8.2', '8.3', '8.4']
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -43,7 +43,7 @@ jobs:
           fi
 
       - name: Cache dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         with:
           path: |
             ~/.cache/composer/files
@@ -57,7 +57,6 @@ jobs:
           ./upload/system/storage/vendor/bin/phpstan analyze --no-progress
 
       - name: Code style
-        if: matrix.php == '8.3'
         run: |
           ./upload/system/storage/vendor/bin/php-cs-fixer fix --dry-run --diff --ansi || true
           ./upload/system/storage/vendor/bin/php-cs-fixer fix --dry-run --format=checkstyle | cs2pr
